@@ -19,7 +19,7 @@ namespace login.datos
                 Conexion.Conectar();
                 SqlCommand comando = new SqlCommand();
                 comando.Connection = Conexion.conexion;
-                comando.CommandText = "select * from usuarios where usuario like @usuario and password like @password";
+                comando.CommandText = "select id,nombre,usuario,departamento,email,perfil,estatus,sucursal,perfil from usuarios where usuario like @usuario and password like @password";
                 comando.Parameters.Add("@usuario", SqlDbType.VarChar).Value = usuario.usuario;
                 comando.Parameters.Add("@password", SqlDbType.VarChar).Value = usuario.usuario;
                 comando.ExecuteReader();
