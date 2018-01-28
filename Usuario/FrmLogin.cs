@@ -1,5 +1,4 @@
 ﻿using login.datos;
-using login.Login;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,7 +34,7 @@ namespace login
                 Usuarios oUsuario = new Usuarios();
                 oUsuario.Usuario = Convert.ToString(usuario);
                 oUsuario.Password = Convert.ToString(password);
-               Usuarios buscar =CUsuario.CheckLogin(oUsuario);
+               Usuarios buscar =DUsuario.CheckLogin(oUsuario);
 
                 if (buscar != null)
                 {

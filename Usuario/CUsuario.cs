@@ -10,13 +10,13 @@ namespace login.Login
 {
     class CLogin
     {
-        public static Usuario CheckLogin(Usuario usuario)
+        public static Usuarios CheckLogin(Usuario usuario)
         {
-            Usuario oUsuario = null;
+            Usuarios oUsuario = null;
             SqlDataReader reader = DUsuario.CheckLogin(usuario);
             if (reader.HasRows)
             {
-                oUsuario = new Usuario();
+                oUsuario = new Usuarios();
                 reader.Read();
                 oUsuario.Id = Convert.ToInt32(reader[0]);
                 oUsuario.nombre = Convert.ToString(reader[1]);

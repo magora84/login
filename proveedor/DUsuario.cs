@@ -13,6 +13,7 @@ namespace login.datos
     {
         public static SqlDataReader CheckLogin(string usuario, string password)
         {
+
             SqlDataReader reader = null;
             try
             {
@@ -23,6 +24,22 @@ namespace login.datos
                 comando.Parameters.Add("@usuario", SqlDbType.VarChar).Value = usuario;
                 comando.Parameters.Add("@password", SqlDbType.VarChar).Value = password;
                 comando.ExecuteReader();
+               
+                if (reader.HasRows)
+                {
+                   
+                   Usuarios oUsuario = new Usuarios();
+                    reader.Read();
+                    oUsuario.Id = Convert.ToInt32(reader[0]);
+                    oUsuario.nombre = Convert.ToString(reader[1]);
+                    oUsuario.usuario = Convert.ToString(reader[2]);
+                    oUsuario.departamento = Convert.ToString(reader[3]);
+                    oUsuario.email = Convert.ToString(reader[4]);
+                    oUsuario.perfil = Convert.ToString(reader[5]);
+                    oUsuario.celular = Convert.ToString(reader[6]);
+                }
+                reader.Close();
+                return oUsuario;
 
             }
             catch (Exception e)

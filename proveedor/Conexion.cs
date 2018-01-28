@@ -11,11 +11,14 @@ namespace login.datos
    public static class Conexion
     {
         public static SqlConnection conexion = new SqlConnection();
+       /* private string User = "sa";
+        private string password = "TCQOJC";
+        private string bd=""*/
         public static void Conectar()
         {
             try
             {
-                conexion = new SqlConnection("Data Source=DESKTOP-0BRLGSJ\\SQLEXPRESS;Initial Catalog=PRUEBA;User ID=sa; password=TCQOJC;");
+                conexion = new SqlConnection("Data Source=DESKTOP-0BRLGSJ\\SQLEXPRESS;Initial Catalog=cobranza;User ID=sa; password=TCQOJC;");
                 conexion.Open();
             }
             catch (SqlException e)
