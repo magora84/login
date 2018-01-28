@@ -1,29 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace login.datos
 {
     class DUsuario
     {
-        public static bool IniciarSesion(Usuario usuario)
+        public static SqlDataReader CheckLogin(Usuario usuario)
         {
+            SqlDataReader reader = null;
             try
             {
                 Conexion.Conectar();
                 SqlCommand comando = new SqlCommand();
                 comando.Connection = Conexion.conexion;
-                comando.CommandText="select * from usuarios where usuario like "
+                comando.CommandText = "select * from usuarios where usuario like @usuario and password like @password";
+                comando.Parameters.Add("@usuario", SqlDbType.VarChar).Value = usuario.usuario;
+                comando.Parameters.Add("@password", SqlDbType.VarChar).Value = usuario.usuario;
+                comando.ExecuteReader();
+
+
             }
             catch (Exception e)
             {
-
-                throw;
-            }
-            return respuesta;
+                MessageBox.Show(" ocurrio un error Detalle" +e.Message);
+                
+             }
+            return reader;
         }
     }
     public class Usuario
