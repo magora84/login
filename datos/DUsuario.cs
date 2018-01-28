@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,10 @@ namespace login.datos
         {
             try
             {
-
+                Conexion.Conectar();
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = Conexion.conexion;
+                comando.CommandText="select * from usuarios where usuario like "
             }
             catch (Exception e)
             {
@@ -24,7 +28,7 @@ namespace login.datos
     }
     public class Usuario
     {
-        public string id { get; set; }
+        public int id { get; set; }
         public string usuario {get; set;}
         public string password { get; set; }
         public string departamento { get; set; }
