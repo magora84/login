@@ -33,7 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnenviar = new System.Windows.Forms.Button();
+            this.Btnenviar = new System.Windows.Forms.Button();
             this.lnkRegistrar = new System.Windows.Forms.LinkLabel();
             this.lnkRecordarContra = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
@@ -81,15 +81,15 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "LOGIN";
             // 
-            // btnenviar
+            // Btnenviar
             // 
-            this.btnenviar.Location = new System.Drawing.Point(197, 217);
-            this.btnenviar.Name = "btnenviar";
-            this.btnenviar.Size = new System.Drawing.Size(111, 23);
-            this.btnenviar.TabIndex = 5;
-            this.btnenviar.Text = "Iniciar Sesion";
-            this.btnenviar.UseVisualStyleBackColor = true;
-            this.btnenviar.Click += new System.EventHandler(this.btnenviar_Click);
+            this.Btnenviar.Location = new System.Drawing.Point(197, 217);
+            this.Btnenviar.Name = "Btnenviar";
+            this.Btnenviar.Size = new System.Drawing.Size(111, 23);
+            this.Btnenviar.TabIndex = 5;
+            this.Btnenviar.Text = "Iniciar Sesion";
+            this.Btnenviar.UseVisualStyleBackColor = true;
+            this.Btnenviar.Click += new System.EventHandler(this.btnenviar_Click);
             // 
             // lnkRegistrar
             // 
@@ -113,13 +113,13 @@
             // 
             // FrmLogin
             // 
-            this.AcceptButton = this.btnenviar;
+            this.AcceptButton = this.Btnenviar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(478, 389);
             this.Controls.Add(this.lnkRecordarContra);
             this.Controls.Add(this.lnkRegistrar);
-            this.Controls.Add(this.btnenviar);
+            this.Controls.Add(this.Btnenviar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -140,7 +140,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnenviar;
+        private System.Windows.Forms.Button Btnenviar;
         private System.Windows.Forms.LinkLabel lnkRegistrar;
         private System.Windows.Forms.LinkLabel lnkRecordarContra;
     }
