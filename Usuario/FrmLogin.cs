@@ -22,7 +22,6 @@ namespace login
         {
            string password = txtPassword.Text;
             string usuario = txtUser.Text;
-        
             if (password == "" || usuario == "")
             {
                 MessageBox.Show("por favor introduscalos 2 valores");
